@@ -1,0 +1,105 @@
+
+    <html >
+    
+    <head>
+      <meta charset="UTF-8">
+      <title>Heart Disease Prediction</title>
+      
+    </head>
+    <body background="/static/istockphoto.jpg" >
+    
+     <div style="color: cornsilk; " class="login">
+        <h1 style="color: rgb(132, 165, 42);">Predict Heart Disease  Probability in next 10 years</h1>
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"method="post">
+
+            <label for="male">male</label>
+            <select  id="male" name="male" > 
+              <option selected disabled>Choose here</option>
+              <option value="0">Female</option> 
+              <option value="1">Male</option> 
+            </select>
+            
+
+            <label for="age">age :</label>
+            <input type="text" name="age" placeholder="age" required="required" />
+            
+
+            <label for="cigsPerDay">cigsPerDay :</label>
+            <input type="text" name="cigsPerDay" placeholder="cigsPerDay" required="required" />
+            
+
+            <label for="BPMeds">BPMeds</label>
+            <select id="BPMeds" name="BPMeds"> 
+              <option selected disabled>Choose here</option>
+              <option value="0">No</option> 
+              <option value="1">Yes</option> 
+            </select>
+
+            
+            <label for="prevalentStroke">prevalentStroke</label>
+            <select id="prevalentStroke" name="prevalentStroke"> 
+              <option selected disabled>Choose here</option>
+              <option value="0">No</option> 
+              <option value="1">Yes</option> 
+                    
+            </select>
+            
+
+            <label for="prevalentHyp">prevalentHyp</label>
+            <select id="prevalentHyp" name="prevalentHyp"> 
+              <option selected disabled>Choose here</option>
+              <option value="0">No</option> 
+              <option value="1">Yes</option> 
+                       
+            </select>
+                   
+            <label for="diabetes">diabetes</label>
+            <select id="diabetes" name="diabetes"> 
+              <option selected disabled>Choose here</option>
+              <option value="0">No</option> 
+              <option value="1">Yes</option> 
+                       
+            </select>
+            <br>
+            
+
+            <label for="totChol">totChol :</label>
+            <input type="text" name="totChol" placeholder="totChol" required="required" />
+            
+
+            <label for="diaBP">diaBP :</label>
+            <input type="text" name="diaBP" placeholder="diaBP" required="required" />
+            
+
+            <label for="BMI">BMI :</label>
+            <input type="text" name="BMI" placeholder="BMI" required="required" />
+            
+
+            <label for="heartRate">heartRate :</label>
+            <input type="text" name="heartRate" placeholder="heartRate" required="required" />
+            
+
+            <label for="pulseBP">pulseBP :</label>
+            <input type="text" name="pulseBP" placeholder="pulseBP" required="required" />
+            <br>
+
+
+            
+               
+            <br>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+    
+     </div>
+    
+    
+    </body>
+    </html>
+
